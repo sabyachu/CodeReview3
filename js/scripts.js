@@ -1,3 +1,4 @@
+//business logic
 var pingPong = function(pingPong){
   var num =[];
 
@@ -14,6 +15,7 @@ var pingPong = function(pingPong){
   };
   return num;
 };
+
 
 $(document).ready(function(){
 
