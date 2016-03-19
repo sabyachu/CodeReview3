@@ -1,35 +1,30 @@
 //Business logic
-var pingPong = function(pingPong){
-  var number =[];
+function pingPong(inputNumber) {
+  var output = [];
 
-  for (var i=1; i<=pingPong; i++){
-    if((i % 3 === 0) && (i % 5 === 0)){
-      number.push("pingPong");
-    } else if (i % 3 === 0){
-      number.push("ping");
-    } else if (i % 5 === 0){
-      number.push("Pong");
+  for (var i = 1; i <= inputNumber; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      output.push("pingpong");
+    } else if (i % 3 === 0) {
+      output.push("ping");
+    } else if (i % 5 === 0) {
+      output.push("pong");
     } else {
-      number.push(i)
-    };
+      output.push(i);
+    }
+  }
+  return output ;
   };
-  return number;
-};
 
-$(document).ready(function(){
 
-  $("form#numbers").submit(function(event){
-    $("#results").empty();
+  $(function() {
+    $("form#pingPong").submit(function(event){
+      var userInput = parseInt($("#userInput").val());
+      var result = pingPong(userInput);
+      $('#result').empty();
+      $('#result').append(result.join(", "));
+      $('#result').show();
 
-//capture user input
-    var number = parseInt($("input#number").val());
-    var result = pingPong(number);
-
-    result.forEach(function(num){
-        var li = $("#results").append("<li>" + num + "</li>");
-      });
-        $("#results").show();
-
-    event.preventDefault();
+        event.preventDefault();
+    });
   });
-});
