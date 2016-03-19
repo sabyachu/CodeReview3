@@ -1,18 +1,19 @@
+//Business logic
 var pingPong = function(pingPong){
-  var num =[];
+  var number =[];
 
   for (var i=1; i<=pingPong; i++){
     if((i % 3 === 0) && (i % 5 === 0)){
-      num.push("pingPong");
+      number.push("pingPong");
     } else if (i % 3 === 0){
-      num.push("ping");
+      number.push("ping");
     } else if (i % 5 === 0){
-      num.push("Pong");
+      number.push("Pong");
     } else {
-      num.push(i)
+      number.push(i)
     };
   };
-  return num;
+  return number;
 };
 
 $(document).ready(function(){
@@ -20,7 +21,8 @@ $(document).ready(function(){
   $("form#numbers").submit(function(event){
     $("#results").empty();
 
-    var number = parseInt($("#input#number").val());
+//capture user input
+    var number = parseInt($("input#number").val());
     var result = pingPong(number);
 
     result.forEach(function(num){
