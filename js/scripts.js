@@ -18,3 +18,14 @@ function pingPong(inputNumber) {
 
 
   //user logic
+  $(function() {
+    $("form#pingPong").submit(function(event){
+      var userInput = parseInt($("#userInput").val());
+      var result = pingPong(userInput);
+      $('#result').empty();
+      $('#result').append(result.join(", "));
+      $('#result').show();
+
+        event.preventDefault();
+    });
+  });
