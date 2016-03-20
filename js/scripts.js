@@ -16,7 +16,7 @@ function pingPong(inputNumber) {
   return output ;
   };
 
-
+//user interface logic
   $(function() {
     $("form#pingPong").submit(function(event){
       var userInput = parseInt($("#userInput").val());
